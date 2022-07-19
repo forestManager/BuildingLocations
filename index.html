@@ -9,6 +9,7 @@
 <script src="./threejs/three.min.js"></script>
 <script src="./threejs/OrbitControls.js"></script>
 <script src="./threejs/ViewHelper.js"></script>
+<script src="./tweenjs/tween.js"></script>
 <script src="./Qgis2threejs.js"></script>
 <script src="./dat-gui/dat.gui.min.js"></script>
 <script src="./dat-gui_panel.js"></script>
@@ -92,13 +93,38 @@
 <!-- animation -->
 <div id="narrativebox" class="ef1">
   <div id="narbody">
-
+    <div id="nar_37bec294" class="narcontent">
+      This is Mt Tarawera. Part of the moutain is outside the case study area.
+    </div>
+    <div id="nar_3db4fc3a" class="narcontent">
+      There are some businesses to the West.
+      
+      Because the case study area is not aligned to Statistics New Zealand SA1 areas, some of these businesses are outside the case study area.
+    </div>
+    <div id="nar_5f14f038" class="narcontent">
+      There are group of packhouses in and around Te Puke. These are outside the case study area.
+    </div>
+    <div id="nar_5e585e9c" class="narcontent">
+      The bulk of the businesses and dairy sheds are in the Western Bay of Plenty.
+    </div>
+    <div id="nar_63caa826" class="narcontent">
+      There is also a cluster of Dairy sheds in the Murupara/Galatea area.
+    </div>
+    <div id="nar_178cfca8" class="narcontent">
+      Feel free to zoom and pan around.
+      
+      You can turn layers on and off using the tools in the top right
+      
+      You can click on items to get more information.
+    </div>
   </div>
   <div id="nextbtn"></div>
 </div>
 
 <script>
+Q3D.Config.viewpoint = {lookAt:{x:1907618.8895603833,y:5764208.236974395,z:-9.60338103954159e-15},pos:{x:1905491.4501672545,y:5748264.694767649,z:7684.329397987785}};
 Q3D.Config.localMode = true;
+Q3D.Config.animation.enabled = true;
 
 var container = document.getElementById("view"),
     app = Q3D.application,
@@ -107,7 +133,7 @@ var container = document.getElementById("view"),
 app.init(container);    // initialize viewer
 
 // load the scene
-app.loadSceneFile("./data/RNC2_BoP_Buildings/scene.js", function (scene) {
+app.loadSceneFile("./data/index/scene.js", function (scene) {
   // scene file has been loaded
   app.start();
 
